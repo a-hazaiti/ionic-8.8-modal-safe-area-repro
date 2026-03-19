@@ -1,0 +1,7 @@
+{
+  "name": "ionic-8.8-modal-safe-area-repro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

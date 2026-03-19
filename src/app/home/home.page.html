@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic 8.8 Modal Safe-Area Bug
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Modal Safe-Area Bug</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h2>Reproduction: applyFullscreenSafeArea() regression</h2>
+
+    <p>
+      Open the <strong>buggy modal</strong> on a device with safe-area insets
+      (e.g. iPhone with notch/home indicator). The modal wrapper height is
+      reduced by <code>safe-area-inset-bottom</code>, causing content to be
+      cut off at the bottom.
+    </p>
+
+    <p>
+      Then open the <strong>fixed modal</strong> which includes an empty
+      <code>&lt;ion-footer&gt;&lt;/ion-footer&gt;</code> as a workaround.
+    </p>
+
+    <ion-button expand="block" color="danger" (click)="openBuggyModal()">
+      Open Buggy Modal (no ion-footer)
+    </ion-button>
+
+    <ion-button expand="block" color="success" (click)="openFixedModal()">
+      Open Fixed Modal (empty ion-footer)
+    </ion-button>
+  </div>
+</ion-content>
